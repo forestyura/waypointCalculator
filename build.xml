@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<project name="harvester" basedir="." default="run">
+	<property file="build.properties" />
+	
+	<!--ZIP-->
+	<target name="zip" description="Archives distributive" depends="jar">
+		<zip destfile="${build.dir}/${name}_v${version}.zip"
+			basedir="${build.dir}" />
+		
+		<delete includeemptydirs="true" dir="${build.dir}" excludes="*.zip" />	
+	</target>
+
+	<!--RUN-->
+	<target name="run" depends="jar" description="Run program">
+		<property name="exec.path" location="${build.dir}/${name}.bat"/>
+		<exec dir="${build.dir}" executable="${exec.path}" vmlauncher="true"/>
+	</target>
+
+	<!--JAR-->
+	<path id="build-jar-classpath">
+		<fileset dir="${build.dir}" includes="${lib.dir}/*.jar" excludes="${lib.dir}/${name}*.jar"/>
+		<fileset dir="/">
+			<include name="*.properties"/>
+		</fileset>
+	</path>
+
+	<target name="jar" description="Pack into jar file" depends="copy-dependancies">
+		<mkdir dir="${build.dir}"/>
+		
+		<pathconvert property="manifest.classpath" refid="build-jar-classpath">		
+			<mapper>
+			    <chainedmapper>
+				    <flattenmapper/>
+			    </chainedmapper>
+			</mapper>
+		</pathconvert>
+		
+		<jar destfile="${build.dir}/${name}.jar"
+			basedir="${classes.dir}">
+	
+			<manifest>
+				<attribute name="Main-Class" value="calculator.App"/>
+				<attribute name="Class-Path" value="${manifest.classpath}"/>
+			</manifest>	
+		</jar>
+
+		<move todir="${build.dir}/${lib.dir}">
+			<fileset dir="${build.dir}" includes="*.jar"/>
+		</move>
+	</target>
+
+	<!--COPY_DEPENDANCIES-->
+	<target name="copy-dependancies" depends="build" description = "Copy required resources">		
+		<copy todir="${build.dir}" >  
+			<fileset dir="">
+				<include name="${lib.dir}/**"/>
+				<include name="${resources.dir}/**"/>
+				<include name="${export.dir}/**"/>
+				<include name="*.properties"/>
+				<exclude name="build.properties" />
+			</fileset>
+		</copy>
+		
+		<replace file="${build.dir}/${resources.dir}/${script.dir}/create-schema.sql" token="@@@" value="${version}"/>
+		
+		<echo file="${build.dir}/${name}.bat">java -Dfile.encoding=UTF8 -jar ${lib.dir}\${name}.jar</echo>
+	</target>
+
+	<!--BUILD-->
+	<path id="build-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement path="${classes.dir}"/>
+	</path>
+
+	<target name="build" description="Create class files" depends="clean">
+		<mkdir dir="${classes.dir}"/>
+		<javac destdir="${classes.dir}" source="1.8" target="1.8" includeantruntime="false" encoding="UTF-8" verbose="true">
+			<src path="${src.dir}"/>
+			<classpath refid="build-classpath"/>
+		</javac>
+	</target>
+
+	<!--CLEAN-->
+	<target name="clean" description="Clean output directories">
+		<delete dir="${classes.dir}" failonerror="false" />
+		<delete dir="${build.dir}" failonerror="false" />		
+	</target>
+</project>

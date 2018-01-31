@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domains>
+    <fields>
+        <field>
+            <name>Терезино №603</name>
+            <points>
+                <point>
+                    <lat>49.856666</lat>
+                    <lon>30.122131</lon>
+                </point>
+                <point>
+                    <lat>49.855485</lat>
+                    <lon>30.121552</lon>
+                </point>
+                <point>
+                    <lat>49.8561</lat>
+                    <lon>30.117736</lon>
+                </point>
+                <point>
+                    <lat>49.856143</lat>
+                    <lon>30.116169</lon>
+                </point>
+                <point>
+                    <lat>49.856625</lat>
+                    <lon>30.116229</lon>
+                </point>
+                <point>
+                    <lat>49.856646</lat>
+                    <lon>30.115896</lon>
+                </point>
+                <point>
+                    <lat>49.857538</lat>
+                    <lon>30.115832</lon>
+                </point>
+            </points>
+        </field>
+        <field>
+            <name>Терезино №598</name>
+            <points>
+                <point>
+                    <lat>49.851887</lat>
+                    <lon>30.120772</lon>
+                </point>
+                <point>
+                    <lat>49.84889</lat>
+                    <lon>30.137644</lon>
+                </point>
+                <point>
+                    <lat>49.854177</lat>
+                    <lon>30.139869</lon>
+                </point>
+                <point>
+                    <lat>49.856543</lat>
+                    <lon>30.122645</lon>
+                </point>
+            </points>
+        </field>
+        <field>
+            <name>Велика Снітинка №153</name>
+            <points>
+                <point>
+                    <lat>50.082687</lat>
+                    <lon>30.039135</lon>
+                </point>
+                <point>
+                    <lat>50.080071</lat>
+                    <lon>30.04069</lon>
+                </point>
+                <point>
+                    <lat>50.076592</lat>
+                    <lon>30.027692</lon>
+                </point>
+                <point>
+                    <lat>50.078366</lat>
+                    <lon>30.02473</lon>
+                </point>
+                <point>
+                    <lat>50.080584</lat>
+                    <lon>30.032966</lon>
+                </point>
+                <point>
+                    <lat>50.08129</lat>
+                    <lon>30.033961</lon>
+                </point>
+            </points>
+        </field>
+    </fields>
+    <machines>
+        <machine>
+            <name>John Deere T660</name>
+            <workWidth>5.0</workWidth>
+            <fuel>0.4</fuel>
+        </machine>
+        <machine>
+            <name>Claas Lexion 480</name>
+            <workWidth>4.5</workWidth>
+            <fuel>0.45</fuel>
+        </machine>
+        <machine>
+            <name>Єнісей 1200</name>
+            <workWidth>3.5</workWidth>
+            <fuel>0.5</fuel>
+        </machine>
+        <machine>
+            <name>Славутич КЗС 9</name>
+            <workWidth>5.2</workWidth>
+            <fuel>0.7</fuel>
+        </machine>
+        <machine>
+            <name>Єнісей 950-1</name>
+            <workWidth>5.1</workWidth>
+            <fuel>0.6</fuel>
+        </machine>
+    </machines>
+</domains>

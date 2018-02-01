@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import domains.Obstacles;
 import domains.Points;
 import graphics.Dimention;
 import logginig.Logger;
@@ -20,7 +21,12 @@ public class Polygon extends ArrayList<Point> implements Displayable{
 	public Polygon(Collection<Points.Point> c) {
 		super(Point.createCollection(c));
 	}
-	
+
+	public Polygon(Collection<Points.Point> c, Collection<Obstacles.Obstacle> obstacles) {
+		super(Point.createCollection(c));
+		addAll(Point.createCollectionFromObstacle(obstacles));
+	}
+
 	public Dimention getDimention(){
 	   	return new Dimention(this);
 	}

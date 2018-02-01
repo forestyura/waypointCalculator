@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import calculator.App;
+import domains.Obstacles;
 import domains.Points;
 import logginig.Logger;
 import tools.GoogleTools;
@@ -167,5 +168,13 @@ public class Point implements Displayable{
 			points.add(new Point(p.lat, p.lon));
 		}
 		return points;
+	}
+
+	public static List<Point> createCollectionFromObstacle(Collection<Obstacles.Obstacle> collection) {
+		List<Point> obstacles = new ArrayList<>();
+		for (Obstacles.Obstacle obstacle: collection) {
+			obstacles.add(new Point(obstacle.lat, obstacle.lon));
+		}
+		return obstacles;
 	}
 }

@@ -89,12 +89,15 @@ public class WindowMain extends JFrame{
         fieldList = new FieldListPanel("Fields", () -> {
         	
 				display.field = fieldList.getSelected();
+
+
 		    	
 		    	Polygon polygon = new Polygon(display.field.points);
 				display.setMapForArea(polygon.getDimention());
 				
 				display.getCanvas().clear();
-				
+
+                display.addDisplayObject("Point", (ArrayList<Point>) Point.createCollectionFromObstacle(display.field.obstacles), new Color(255, 0, 0, 255));
 				display.addDisplayObject(DisplayPanel.GROUP_FIELD, (ArrayList<Point>) polygon, new Color(0, 255, 0, 127));
 				display.addDisplayObject(DisplayPanel.GROUP_FIELD, (Displayable) polygon, new Color(50, 30, 210, 32));
 				

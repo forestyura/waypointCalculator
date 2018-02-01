@@ -13,7 +13,7 @@ import gui.CanvasPanel;
 @SuppressWarnings("serial")
 public class GPoint extends Point implements CanvasObject {
 	private Color color;
-	private int size = 5;
+	private int size = 10;
 	private CanvasPanel canvas;
 	private geometry.Point point;
 

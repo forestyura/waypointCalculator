@@ -33,10 +33,15 @@ public class Fields extends PersistentContainer<Field>{
 		@XmlElementWrapper
 		public List<Point> points = new ArrayList<>();
 
+		@XmlElement(name = "obstacle")
+		@XmlElementWrapper
+		public List<Obstacles.Obstacle> obstacles = new ArrayList<>();
+
 		private Field load(ResultSet rs) throws SQLException {
 			this.id = rs.getInt("ID");
 			this.name = rs.getString("NAME");
 			this.points = Points.getPoints(this.id);
+			this.obstacles = Obstacles.getObstacles(this.id);
 			return this;
 		}
 
@@ -58,6 +63,13 @@ public class Fields extends PersistentContainer<Field>{
 				point.seq = this.points.size();
 				point.save();
 				point.persist();
+			}
+
+			for (Obstacles.Obstacle obstacle : this.obstacles) {
+				obstacle.fieldId = this.id;
+				obstacle.seq = this.points.size();
+				obstacle.save();
+				obstacle.persist();
 			}
 		}
 

@@ -28,6 +28,7 @@ import javax.xml.bind.JAXBException;
 import calculator.App;
 import domains.Fields;
 import domains.Machinery;
+import domains.Obstacles;
 import domains.Points;
 import geometry.Displayable;
 import geometry.Point;
@@ -194,6 +195,7 @@ public class WindowMain extends JFrame{
 			try {
 				ExportImport.importXML(new FileInputStream(fileChooser.getSelectedFile()));
 				Machinery.loadAll();
+				Obstacles.loadAll();
 				Points.loadAll();
 				Fields.loadAll();
 				

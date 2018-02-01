@@ -21,6 +21,7 @@ import javax.swing.JWindow;
 import calculator.App;
 import domains.Fields;
 import domains.Machinery;
+import domains.Obstacles;
 import domains.Points;
 import logginig.AbstractLogger.LogLevel;
 import sqlutils.DBHelper;
@@ -67,6 +68,7 @@ public class WindowLogo extends JWindow implements ActionListener {
 
 		logger.info("Loading database");
 		new Points();
+		new Obstacles();
 		new Fields();
 		new Machinery();
 		

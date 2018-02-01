@@ -24,8 +24,17 @@ CREATE TABLE POINTS
 	SEQ			INT 	NOT NULL,
 	LAT			REAL    NOT NULL, 
 	LON 		REAL    NOT NULL);
+
+	CREATE TABLE OBSTACLES
+	(ID 		INT		PRIMARY KEY,
+	FIELD_ID	INT		NOT NULL,
+	SEQ			INT 	NOT NULL,
+	RADIUS REAL NoT NULL,
+	LAT			REAL    NOT NULL,
+	LON 		REAL    NOT NULL);
 	
 insert into DB_INFO VALUES("DB schema name", "1.2", datetime('now'));
 insert into DB_INFO VALUES("FIELDS_SEQUENCE", "0", datetime('now'));
 insert into DB_INFO VALUES("MACHINERY_SEQUENCE", "0", datetime('now'));
 insert into DB_INFO VALUES("POINTS_SEQUENCE", "0", datetime('now'));
+insert into DB_INFO VALUES("OBSTACLES_SEQUENCE", "0", datetime('now'));

@@ -3,6 +3,13 @@
     <fields>
         <field>
             <name>Терезино №603</name>
+            <obstacles>
+                <obstacle>
+                    <lat>49.856493</lat>
+                    <lon>30.118771</lon>
+                    <radius>10</radius>
+                </obstacle>
+            </obstacles>
             <points>
                 <point>
                     <lat>49.856666</lat>
@@ -36,6 +43,13 @@
         </field>
         <field>
             <name>Терезино №598</name>
+            <obstacles>
+                <obstacle>
+                    <lat>49.853762</lat>
+                    <lon>30.129400</lon>
+                    <radius>10</radius>
+                </obstacle>
+            </obstacles>
             <points>
                 <point>
                     <lat>49.851887</lat>
@@ -57,6 +71,13 @@
         </field>
         <field>
             <name>Велика Снітинка №153</name>
+            <obstacles>
+                <obstacle>
+                    <lat>50.079427</lat>
+                    <lon>30.033746</lon>
+                    <radius>10</radius>
+                </obstacle>
+            </obstacles>
             <points>
                 <point>
                     <lat>50.082687</lat>
